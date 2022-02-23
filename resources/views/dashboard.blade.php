@@ -3,7 +3,7 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <div class="row">
+        <div class="row">
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
@@ -50,6 +50,52 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body" id="admissionCountEnrollee">
+                            4 Enrollees
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small stretched-link text-end" href="#">View Details</a>
+                            <div class="small"><i class="nc-icon nc-stre-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body" id="admissionCountEnrollee">
+                            4 Enrollees
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small stretched-link text-end" href="#">View Details</a>
+                            <div class="small"><i class="nc-icon nc-stre-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body" id="admissionCountEnrollee">
+                            4 Enrollees
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small stretched-link text-end" href="#">View Details</a>
+                            <div class="small"><i class="nc-icon nc-stre-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body" id="admissionCountEnrollee">
+                            4 Enrollees
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small stretched-link text-end" href="#">View Details</a>
+                            <div class="small"><i class="nc-icon nc-stre-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
                 <div class="col-md-4">
                     <div class="card ">
                         <div class="card-header ">
@@ -252,7 +298,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 @endsection
