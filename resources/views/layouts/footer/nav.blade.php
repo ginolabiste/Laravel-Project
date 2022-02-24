@@ -3,7 +3,7 @@
         <nav>
             <ul class="footer-menu">
                 <li>
-                    <a href="https://dorsu.edu.ph/" class="nav-link" target="_blank">{{ __('DOrSU Site Main') }}</a>
+                    <a href="https://dorsu.edu.ph/" class="nav-link" target="_blank">{{ __('DOrSU Main') }}</a>
                 </li>
                 <li>
                     <a href="https://dorsu.edu.ph/bec/" class="nav-link" target="_blank">{{ __('Banay-banay Ext.') }}</a>
