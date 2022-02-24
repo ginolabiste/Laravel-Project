@@ -7,7 +7,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            6,451 enrollees
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -18,7 +18,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            1,605 incoming first year
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -29,7 +29,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            509 transferees
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -40,7 +40,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            48 returning
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -53,7 +53,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            867 accepted by program
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -64,7 +64,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            119 transferred to other program
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -75,7 +75,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            800 given ID No.
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -86,7 +86,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4 Enrollees
+                            4,000 advised
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -309,7 +309,7 @@
             // Javascript method's body can be found in assets/js/demos.js
             demo.initDashboardPageCharts();
 
-            demo.showNotification();
+            //demo.showNotification();
 
         });
     </script>

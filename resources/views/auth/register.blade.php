@@ -1,7 +1,7 @@
-@extends('layouts.app', ['activePage' => 'register', 'title' => 'Light Bootstrap Dashboard Laravel by Creative Tim & UPDIVISION'])
+@extends('layouts.app', ['activePage' => 'register', 'title' => 'DOrSU'])
 
 @section('content')
-    <div class="full-page register-page section-image" data-color="orange" data-image="{{ asset('light-bootstrap/img/bg5.jpg') }}">
+    <div class="full-page register-page section-image" data-color="orange" data-image="{{ asset('light-bootstrap/img/dorsu-background.jpg') }}">
         <div class="content">
             <div class="container">
                 <div class="card card-register card-plain text-center">
@@ -15,7 +15,7 @@
                                         </div>
                                     </div>
                                     <div class="media-body">
-                                        <h4>{{ __('Free Account') }}</h4>
+                                        <h4>{{ __('Create an Acount') }}</h4>
                                         <p>{{ __('Here you can write a feature description for your dashboard, let the users know what is the value that you give them.') }}</p>
                                     </div>
                                 </div>

@@ -117,7 +117,7 @@
         -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
+                    <a href="#" class="simple-text">
                         {{ __("Gino Labiste") }}
                     </a>
                 </div>
@@ -128,149 +128,121 @@
                             <p>{{ __("Dashboard") }}</p>
                         </a>
                     </li>
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#laravelExamples" aria-expanded="true">
-                            <i>
-                                <img src="{{ asset('light-bootstrap/img/laravel.svg') }}" style="width:25px">
-                            </i>
-                            <p>
-                                {{ __('Laravel example') }}
-                                <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse  show " id="laravelExamples">
-                            <ul class="nav">
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="{{route('profile.edit')}}">
-                                        <i class="nc-icon nc-single-02"></i>
-                                        <p>{{ __("User Profile") }}</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item  active">
-                                    <a class="nav-link" href="{{route('user.index')}}">
-                                        <i class="nc-icon nc-circle-09"></i>
-                                        <p>{{ __("User Management") }}</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-        
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{route('page.index', 'table')}}">
+                    <li class="nav-item @if($activePage == 'students-list') active @endif">
+                        <a class="nav-link" href="{{route('page.index', 'students-list')}}">
                             <i class="nc-icon nc-notes"></i>
-                            <p>{{ __("Table List") }}</p>
+                            <p>{{ __("Students List") }}</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if($activePage == 'school-id') active @endif">
+                        <a class="nav-link" href="{{route('page.index', 'school-id')}}">
+                            <i class="nc-icon nc-badge"></i>
+                            <p>{{ __("Assign School ID") }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item @if($activePage == 'sync') active @endif">
+                        <a class="nav-link" href="{{route('page.index', 'sync')}}">
+                            <i class="nc-icon nc-layers-3"></i>
+                            <p>{{ __("Sync") }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item @if($activePage == 'typography') active @endif">
                         <a class="nav-link" href="{{route('page.index', 'typography')}}">
                             <i class="nc-icon nc-paper-2"></i>
                             <p>{{ __("Typography") }}</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if($activePage == 'icons') active @endif">
                         <a class="nav-link" href="{{route('page.index', 'icons')}}">
                             <i class="nc-icon nc-atom"></i>
                             <p>{{ __("Icons") }}</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{route('page.index', 'maps')}}">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>{{ __("Maps") }}</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item @if($activePage == 'notifications') active @endif">
                         <a class="nav-link" href="{{route('page.index', 'notifications')}}">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>{{ __("Notifications") }}</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active bg-danger" href="{{route('page.index', 'upgrade')}}">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>{{ __("Upgrade to PRO") }}</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
-        </div>                <div class="fixed-plugin">
-<div class="dropdown show-dropdown">
-    <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
-    </a>
-    <ul class="dropdown-menu">
-        <li class="header-title"> Sidebar Style</li>
-        <li class="adjustments-line">
-            <a href="javascript:void(0)" class="switch-trigger">
-                <p>Background Image</p>
-                <label class="switch">
-                    <div class="bootstrap-switch-on bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate" style="width: 72px;"><div class="bootstrap-switch-container" style="width: 122px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 50px;">ON</span><span class="bootstrap-switch-label" style="width: 30px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-primary" style="width: 50px;">OFF</span><input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"></div></div>
-                    <span class="toggle"></span>
-                </label>
-                <div class="clearfix"></div>
-            </a>
-        </li>
-        <li class="adjustments-line">
-            <a href="javascript:void(0)" class="switch-trigger background-color">
-                <p>Filters</p>
-                <div class="pull-right">
-                    <span class="badge filter badge-black" data-color="black"></span>
-                    <span class="badge filter badge-azure" data-color="azure"></span>
-                    <span class="badge filter badge-green" data-color="green"></span>
-                    <span class="badge filter badge-orange" data-color="orange"></span>
-                    <span class="badge filter badge-red" data-color="red"></span>
-                    <span class="badge filter badge-purple active" data-color="purple"></span>
-                </div>
-                <div class="clearfix"></div>
-            </a>
-        </li>
-        <li class="header-title">Sidebar Images</li>
-        <li class="active">
-            <a class="img-holder switch-trigger" href="javascript:void(0)">
-                <img src="{{ asset('/light-bootstrap/img/sidebar-1.jpg') }}" alt="" />
-            </a>
-        </li>
-        <li>
-            <a class="img-holder switch-trigger" href="javascript:void(0)">
-                <img src="{{ asset('/light-bootstrap/img/sidebar-3.jpg') }}" alt="" />
-            </a>
-        </li>
-        <li>
-            <a class="img-holder switch-trigger" href="javascript:void(0)">
-                <img src="{{ asset('/light-bootstrap/img/sidebar-4.jpg') }}" alt="" />
-            </a>
-        </li>
-        <li>
-            <a class="img-holder switch-trigger" href="javascript:void(0)">
-                <img src="{{ asset('/light-bootstrap/img/sidebar-5.jpg') }}" alt="" />
-            </a>
-        </li>
-        <li class="button-container">
-            <div class="">
-                <a href="https://www.creative-tim.com/product/light-bootstrap-dashboard-laravel" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-            </div>
-        </li>
-        <li class="button-container">
-            <div class="">
-                <a href="https://light-bootstrap-dashboard-laravel.creative-tim.com/docs/tutorial-components.html" target="_blank" class="btn btn-default btn-block btn-fill">View Documentation</a>
-            </div>
-        </li>
-        <li class="header-title pro-title text-center">Want more components?</li>
-        <li class="button-container">
-            <div class="">
-                <a href="https://www.creative-tim.com/product/light-bootstrap-dashboard-pro-laravel" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-            </div>
-        </li>
-        <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-        <li class="button-container">
-            <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre twitter-sharrre"><i class="fa fa-twitter"></i>· 256</button>
-            <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre facebook-sharrre"><i class="fa fa-facebook-square"></i>· 426</button>
-        </li>
-    </ul>
-</div>
-</div>            
+        </div>                
+        <!-- <div class="fixed-plugin">
+            <div class="dropdown show-dropdown">
+                <a href="#" data-toggle="dropdown">
+                    <i class="fa fa-cog fa-2x"> </i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="header-title"> Sidebar Style</li>
+                    <li class="adjustments-line">
+                        <a href="javascript:void(0)" class="switch-trigger">
+                            <p>Background Image</p>
+                            <label class="switch">
+                                <div class="bootstrap-switch-on bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate" style="width: 72px;"><div class="bootstrap-switch-container" style="width: 122px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 50px;">ON</span><span class="bootstrap-switch-label" style="width: 30px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-primary" style="width: 50px;">OFF</span><input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"></div></div>
+                                <span class="toggle"></span>
+                            </label>
+                            <div class="clearfix"></div>
+                        </a>
+                    </li>
+                    <li class="adjustments-line">
+                        <a href="javascript:void(0)" class="switch-trigger background-color">
+                            <p>Filters</p>
+                            <div class="pull-right">
+                                <span class="badge filter badge-black" data-color="black"></span>
+                                <span class="badge filter badge-azure" data-color="azure"></span>
+                                <span class="badge filter badge-green" data-color="green"></span>
+                                <span class="badge filter badge-orange" data-color="orange"></span>
+                                <span class="badge filter badge-red" data-color="red"></span>
+                                <span class="badge filter badge-purple active" data-color="purple"></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </a>
+                    </li>
+                    <li class="header-title">Sidebar Images</li>
+                    <li class="active">
+                        <a class="img-holder switch-trigger" href="javascript:void(0)">
+                            <img src="{{ asset('/light-bootstrap/img/sidebar-1.jpg') }}" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="img-holder switch-trigger" href="javascript:void(0)">
+                            <img src="{{ asset('/light-bootstrap/img/sidebar-3.jpg') }}" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="img-holder switch-trigger" href="javascript:void(0)">
+                            <img src="{{ asset('/light-bootstrap/img/sidebar-4.jpg') }}" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="img-holder switch-trigger" href="javascript:void(0)">
+                            <img src="{{ asset('/light-bootstrap/img/sidebar-5.jpg') }}" alt="" />
+                        </a>
+                    </li>
+                    <li class="button-container">
+                        <div class="">
+                            <a href="https://www.creative-tim.com/product/light-bootstrap-dashboard-laravel" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
+                        </div>
+                    </li>
+                    <li class="button-container">
+                        <div class="">
+                            <a href="https://light-bootstrap-dashboard-laravel.creative-tim.com/docs/tutorial-components.html" target="_blank" class="btn btn-default btn-block btn-fill">View Documentation</a>
+                        </div>
+                    </li>
+                    <li class="header-title pro-title text-center">Want more components?</li>
+                    <li class="button-container">
+                        <div class="">
+                            <a href="https://www.creative-tim.com/product/light-bootstrap-dashboard-pro-laravel" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
+                        </div>
+                    </li>
+                    <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
+                    <li class="button-container">
+                        <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre twitter-sharrre"><i class="fa fa-twitter"></i>· 256</button>
+                        <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre facebook-sharrre"><i class="fa fa-facebook-square"></i>· 426</button>
+                    </li>
+                </ul>
+            </div> -->
+    </div>            
         <div class=" main-panel ">
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
