@@ -20,7 +20,7 @@
                                     <th>Status</th>
                                 </thead>
                                 <tbody>
-                                <tr>
+                                    <tr>
                                         <td>Not Available</td>
                                         <td>Dakota Rice</td>
                                         <td>BSIT</td>

@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-7 col-md-8">
-                        <h1 class="text-white text-center">{{ __('DOrSU Registration') }}<br>{{ __('Pre-enrollment Module') }}</h1>
+                        <h1 class="text-white text-center">{{ __('DOrSU Enrollment') }}<br>{{ __('Pre-registration Module') }}</h1>
                     </div>
                 </div>
             </div>
