@@ -17,7 +17,7 @@
                                         <select class="form-select form-control" aria-label="semester" id="semester">
                                             <option selected>Choose---</option>
                                             @for($i = -1; $i < 3; $i++)
-                                            <option value="{{ date('Y') + $i }}">{{ date('Y') + $i }}</option>
+                                            <option value="{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}">{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}</option>
                                             @endfor
                                         </select> 
                                     </div>
