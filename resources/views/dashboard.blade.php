@@ -11,6 +11,7 @@
                         </div>
                         <div class="card-body">
                             <form action="" method="post">
+                                @csrf
                                 <div class="form-row mb-3">
                                     <div class="col">
                                         <label for="schoolYear">School Year</label>
@@ -27,6 +28,8 @@
                                             <option selected>Choose---</option>
                                             <option value="1">First Semester</option>
                                             <option value="2">Second Semester</option>
+                                            <option value="3">Summer Semester</option>
+                                            <option value="4">Late Semester</option>
                                         </select>  
                                     </div>
                                 </div>
