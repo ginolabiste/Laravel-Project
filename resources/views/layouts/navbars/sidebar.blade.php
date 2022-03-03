@@ -17,33 +17,33 @@ Tip 2: you can also add an image using data-image tag
                     <p>{{ __("Dashboard") }}</p>
                 </a>
             </li>
-            <!--li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#laravelExamples" @if($activeButton =='laravel') aria-expanded="true" @endif>
-                    <i>
-                        <img src="{{ asset('light-bootstrap/img/laravel.svg') }}" style="width:25px">
-                    </i>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#semesters" @if($activeButton =='semesters') aria-expanded="true" @endif>
+                    <i class="nc-icon nc-attach-87"></i>
                     <p>
-                        {{ __('Laravel example') }}
+                        {{ __('Semesters') }}
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse @if($activeButton =='laravel') show @endif" id="laravelExamples">
+                <div class="collapse @if($activeButton =='semesters') show @endif" id="semesters">
+                    <hr>
                     <ul class="nav">
-                        <li class="nav-item @if($activePage == 'user') active @endif">
-                            <a class="nav-link" href="{{route('profile.edit')}}">
-                                <i class="nc-icon nc-single-02"></i>
-                                <p>{{ __("User Profile") }}</p>
+                        <li class="nav-item @if($activePage == 'manage-semester') active @endif">
+                            <a class="nav-link" href="{{route('semesters.index')}}">
+                                <i class="nc-icon nc-circle-09"></i>
+                                <p>{{ __("Management") }}</p>
                             </a>
                         </li>
-                        <li class="nav-item @if($activePage == 'user-management') active @endif">
-                            <a class="nav-link" href="{{route('user.index')}}">
-                                <i class="nc-icon nc-circle-09"></i>
-                                <p>{{ __("User Management") }}</p>
+                        <li class="nav-item @if($activePage == 'add-semester') active @endif">
+                            <a class="nav-link" href="{{route('semesters.create')}}">
+                                <i class="nc-icon nc-single-02"></i>
+                                <p>{{ __("Open Semester") }}</p>
                             </a>
                         </li>
                     </ul>
+                    <hr>
                 </div>
-            </li-->
+            </li>
             <li class="nav-item @if($activePage == 'students-list') active @endif">
                 <a class="nav-link" href="{{route('page.index', 'students-list')}}">
                     <i class="nc-icon nc-notes"></i>
