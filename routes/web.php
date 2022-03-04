@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SemestersController;
+use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::patch('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::patch('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 	Route::resource('/semesters', SemestersController::class);
+	Route::resource('/students', StudentsController::class);
 });
 
 Route::group(['middleware' => 'auth'], function () {

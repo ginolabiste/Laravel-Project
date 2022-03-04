@@ -44,8 +44,8 @@ Tip 2: you can also add an image using data-image tag
                     <hr>
                 </div>
             </li>
-            <li class="nav-item @if($activePage == 'students-list') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'students-list')}}">
+            <li class="nav-item @if($activePage == 'students') active @endif">
+                <a class="nav-link" href="{{route('students.index')}}">
                     <i class="nc-icon nc-notes"></i>
                     <p>{{ __("Students List") }}</p>
                 </a>
