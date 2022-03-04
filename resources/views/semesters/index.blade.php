@@ -1,58 +1,40 @@
-@extends('layouts.app', ['activePage' => 'add-semester', 'title' => 'Enrollment Pre-registration Module', 'navName' => 'Semester Management', 'activeButton' => 'semesters'])
+@extends('layouts.app', ['activePage' => 'manage-semester', 'title' => 'Enrollment Pre-registration Module', 'navName' => 'Semester Management', 'activeButton' => 'semesters'])
 
 @section('content')
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <div class="card">
-                        <div class="card-header">
-                            Enrollment Pre-registration
-                        </div>
-                        <div class="card-body">
-                            <form action="" method="post">
-                                @csrf
-                                <div class="form-row mb-3">
-                                    <div class="col">
-                                        <label for="schoolYear">School Year</label>
-                                        <select class="form-select form-control" aria-label="semester" id="semester">
-                                            <option selected>Choose---</option>
-                                            @for($i = -1; $i < 3; $i++)
-                                            <option value="{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}">{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}</option>
-                                            @endfor
-                                        </select> 
-                                    </div>
-                                    <div class="col">
-                                        <label for="semester">School Semester</label>
-                                        <select class="form-select form-control" aria-label="semester" id="semester">
-                                            <option selected>Choose---</option>
-                                            <option value="First Semester">First Semester</option>
-                                            <option value="Second Semester">Second Semester</option>
-                                            <option value="Summer Semester">Summer Semester</option>
-                                            <option value="Late Semester">Late Semester</option>
-                                        </select>  
-                                    </div>
-                                </div>
-                                <div class="form-row mb-3">
-                                    <div class="col text-center">
-                                        <button type="submit" class="btn btn-primary ">Open Pre-registration</button>
-                                    </div>
-                                </div>
-                            </form> 
-                        </div>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card striped-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Semesters List</h4>
+                        <p class="card-category">{{ __('Lists of semesters') }}</p>
+                    </div>
+                    <div class="card-body table-full-width table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>School Year</th>
+                                <th>Semester</th>
+                                <th>Opened at</th>
+                                <th>Opened by</th>
+                                <th>Status</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($semesters as $semester)
+                                    <tr>
+                                        <td>{{ $semester->school_year }}</td>
+                                        <td>{{ $semester->semester }}</td>
+                                        <td>{{ $semester->created_at }}</td>
+                                        <td>{{ $semester->email }}</td>
+                                        <td>{{ $semester->closed_at }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection
-
-@push('js')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
-            //demo.showNotification();
-        });
-    </script>
-@endpush

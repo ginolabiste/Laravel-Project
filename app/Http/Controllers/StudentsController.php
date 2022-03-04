@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Semester;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class SemestersController extends Controller
+class StudentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +13,7 @@ class SemestersController extends Controller
      */
     public function index()
     {
-        $semesters = Semester::orderBy('id', 'DESC')->get();
-
-        return view('semesters.index', [
-            'semesters' => $semesters
-        ]);
+        //
     }
 
     /**
@@ -29,7 +23,7 @@ class SemestersController extends Controller
      */
     public function create()
     {
-        return view('semesters.create');
+        //
     }
 
     /**
@@ -40,19 +34,7 @@ class SemestersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        // $semester = new Semesters;
-
-        // $semester->school_year = $request->input('school_year');
-        // $semester->semester = $request->input('semester');
-        // $semester->email = $user->email;
-        $semester = Semester::create([
-            'school_year' => $request->input('school_year'),
-            'semester' => $request->input('semester'),
-            'email' => $user->email
-        ]);
-
-        return redirect('semesters');
+        //
     }
 
     /**
