@@ -22,7 +22,11 @@
                                 <tbody>
                                     @foreach ($students as $student)
                                         <tr>
-                                            <td>{{ $student->school_id }}</td>
+                                            @if ($student->school_id == NULL)
+                                                <td>{{ __('Not yet advised') }}</td>
+                                            @else
+                                                <td>{{ $student->school_id }}</td>
+                                            @endif
                                             <td>{{ $student->first_name }} {{ $student->middle_name }} {{ $student->last_name }}</td>
                                             <td>{{ $student->course_taken }}</td>
                                             <td>{{ $student->student_status }}</td>

@@ -7,7 +7,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            6,451 enrollees
+                            {{ $counted }} enrollees
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -18,7 +18,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            1,605 incoming first year
+                            {{ $incoming }} incoming first year
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -29,7 +29,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            509 transferees
+                            {{ $transferees }} transferees
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -40,7 +40,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            48 returning
+                            {{ $returning }} returning
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -75,7 +75,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            800 given ID No.
+                        {{ $hasSchoolID }} given ID No.
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
