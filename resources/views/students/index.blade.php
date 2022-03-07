@@ -31,6 +31,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <div class="d-flex float-right pr-4">
+                                {!! $students->appends(['sort' => 'students'])->links() !!}
+                            </div>
                         </div>
                     </div>
                 </div>
