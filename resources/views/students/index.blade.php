@@ -28,9 +28,17 @@
                                                 <td>{{ $student->school_id }}</td>
                                             @endif
                                             <td>{{ $student->first_name }} {{ $student->middle_name }} {{ $student->last_name }}</td>
-                                            <td>{{ $student->course_taken }}</td>
-                                            <td>{{ $student->student_status }}</td>
+                                            @if ($student->course_taken == NULL)
+                                                <td>{{ $student->course_first_choice }}</td>
+                                            @else
+                                                <td>{{ $student->course_taken }}</td>
+                                            @endif
                                             <td>{{ $student->application_status }}</td>
+                                            @if ($student->student_status == NULL)
+                                                <td>{{ __('Ongoing') }}</td>
+                                            @else
+                                                <td>{{ $student->student_status }}</td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 </tbody>
