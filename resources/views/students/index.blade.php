@@ -28,10 +28,10 @@
                                                 <td>{{ $student->school_id }}</td>
                                             @endif
                                             <td>{{ $student->first_name }} {{ $student->middle_name }} {{ $student->last_name }}</td>
-                                            @if ($student->course_taken == NULL)
-                                                <td>{{ $student->course_first_choice }}</td>
+                                            @if ($student->acronyms == NULL)
+                                                <td>{{ $student->acronyms }}</td>
                                             @else
-                                                <td>{{ $student->course_taken }}</td>
+                                                <td>{{ $student->acronyms }}</td>
                                             @endif
                                             <td>{{ $student->application_status }}</td>
                                             @if ($student->student_status == NULL)

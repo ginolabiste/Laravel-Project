@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentsController extends Controller
 {
@@ -14,7 +15,11 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = Student::orderBy('id', 'DESC')->paginate(10);
+        $students = DB::table('students')
+        ->select('students.id as id', 'school_id', 'first_name', 'middle_name', 'last_name', 'courses.acronyms as acronyms', 'student_status', 'application_status')
+        ->join('courses as courses', 'students.course_first_choice', '=', 'courses.id', 'left')
+        ->orderBy('id', 'DESC')
+        ->paginate(10);
         return view('students.index', [
             'students' => $students
         ]);
