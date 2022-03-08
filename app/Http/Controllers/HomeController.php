@@ -31,7 +31,10 @@ class HomeController extends Controller
         $countTransferees = $enrollees->where('student_status', 'transferee')->count();
         $countReturning = $enrollees->where('student_status', 'returnee')->count();
         $countOld = $enrollees->where('student_status', 'old')->count();
-        $hasSchoolID = $enrollees->where('school_id', '!==', 'NULL')->count();
+        $countAdvised = $enrollees->where('application_status', 'advised')->count();
+        $countAccepted = $enrollees->where('application_status', 'accepted')->count();
+        $transferredTo = $enrollees->where('application_status', 'transferred_to')->count();
+        $hasSchoolID = $enrollees->where('school_id', '!=', NULL)->count();
 
         return view('dashboard', [
             'counted' => $countEnrollees,
@@ -39,6 +42,9 @@ class HomeController extends Controller
             'transferees' => $countTransferees,
             'returning' => $countReturning,
             'old' => $countOld,
+            'countAdvised' => $countAdvised,
+            'countAccepted' => $countAccepted,
+            'transferredTo' => $transferredTo,
             'hasSchoolID' => $hasSchoolID
         ]);
     }

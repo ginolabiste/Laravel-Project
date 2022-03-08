@@ -53,7 +53,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            867 accepted by program
+                            {{ $countAccepted }} accepted by program
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -64,7 +64,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            119 transferred to
+                            {{ $transferredTo }} transferred to
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
@@ -86,7 +86,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body" id="admissionCountEnrollee">
-                            4,000 advised
+                            {{ $countAdvised }} advised
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small stretched-link text-end" href="#">View Details</a>
