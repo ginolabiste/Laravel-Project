@@ -984,7 +984,8 @@ fieldset[disabled] .btn.active {
 
 .btn-primary {
     border-color: #3472F7;
-    color: #3472F7;
+    color: #fff;
+    background-color: #3472F7;
 }
 
 .btn-primary:hover,

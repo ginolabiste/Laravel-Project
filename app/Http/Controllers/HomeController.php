@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Semester;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         $enrollees = Student::all();
+        $semesters = Semester::all()->max('created_at')->toArray();
+        $current_semester = Semester::where('created_at', $semesters['formatted'])->get();
 
+        
         $countEnrollees = $enrollees->count();
         $countIncoming = $enrollees->where('student_status', 'incoming')->count();
         $countTransferees = $enrollees->where('student_status', 'transferee')->count();
@@ -45,7 +49,8 @@ class HomeController extends Controller
             'countAdvised' => $countAdvised,
             'countAccepted' => $countAccepted,
             'transferredTo' => $transferredTo,
-            'hasSchoolID' => $hasSchoolID
+            'hasSchoolID' => $hasSchoolID,
+            'semesters' => $current_semester
         ]);
     }
 }

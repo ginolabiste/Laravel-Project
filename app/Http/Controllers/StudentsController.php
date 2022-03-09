@@ -54,7 +54,9 @@ class StudentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id)->first();
+        
+        return view('students.show')->with('student', $student);
     }
 
     /**

@@ -18,6 +18,7 @@
                                     <th>Course</th>
                                     <th>Type</th>
                                     <th>Status</th>
+                                    <th>Actions</th>
                                 </thead>
                                 <tbody>
                                     @foreach ($students as $student)
@@ -39,12 +40,15 @@
                                             @else
                                                 <td>{{ $student->student_status }}</td>
                                             @endif
+                                            <td>
+                                                <a class="btn btn-primary btn-sm mx-1" href="students/{{ $student->id }}" role="button">View</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex float-right pr-4">
-                                {!! $students->appends(['sort' => 'students'])->links() !!}
+                                {{ $students->appends(['sort' => 'students'])->links() }}
                             </div>
                         </div>
                     </div>
