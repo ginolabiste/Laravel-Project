@@ -1,6 +1,5 @@
 <div hidden class="container-fluid hdn-div fadeInDown">
     <div class="row justify-content-center">
-        <div class="col-lg-10">
             <div id="newstudform" class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header">
                     <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px; font-family: CENTURY GOTHIC;">
