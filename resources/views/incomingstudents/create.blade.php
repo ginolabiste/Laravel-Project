@@ -116,9 +116,8 @@
                                     <div class="row text-center">
                                         <div class="col-lg-4">
                                             <div>
-                                                <img src="img/newstudent.png">
+                                                <img src="{{asset('light-bootstrap/img/newstudent.png')}}">
                                             </div>
-                                            <br>
                                             <h4>New Student</h4>
                                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat,
                                                 exercitationem!</p>
@@ -127,9 +126,8 @@
 
                                         <div class="col-lg-4">
                                             <div>
-                                                <img src="img/transferee.png">
+                                                <img src="{{asset('light-bootstrap/img/transferee.png')}}">
                                             </div>
-                                            <br>
                                             <h4>Transferee</h4>
                                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat,
                                                 exercitationem!</p>
@@ -138,9 +136,8 @@
 
                                         <div class="col-lg-4">
                                             <div>
-                                                <img src="img/returningstudent.png">
+                                                <img src="{{asset('light-bootstrap/img/returningstudent.png')}}">
                                             </div>
-                                            <br>
                                             <h4>Returning Student</h4>
                                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat,
                                                 exercitationem!</p>
