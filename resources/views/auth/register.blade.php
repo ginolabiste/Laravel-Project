@@ -55,6 +55,15 @@
                                                 <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter email" class="form-control" required>
                                             </div>
 
+                                            <div class="form-group">   {{-- is-invalid make border red --}}
+                                                <select class="custom-select" id="intitute_id" name="institute_id">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">Institute of Computing and Engineering</option>
+                                                    <option value="2">Institute of Business and Public Affairs</option>
+                                                    <option value="3">Institure of Education and Teacher Training</option>
+                                                </select>
+                                            </div>
+
                                             <div class="form-group">
                                                 <input type="password" name="password" class="form-control" required >
                                             </div>
