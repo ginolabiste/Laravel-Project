@@ -16,6 +16,7 @@ class CreateAdvisersTable extends Migration
         Schema::create('advisers', function (Blueprint $table) {
             $table->increment('id');
             $table->integer('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
             $table->integer('assigned_by');
             $table->string('semester');
             $table->string('year_level');
