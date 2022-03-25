@@ -20,6 +20,8 @@ class EmployeeHasDesignations extends Migration
             $table->integer('designation_id');
             $table->foreign('designation_id')->references('id')->on('designations')->onDelete('cascade');
             $table->string('designation_role');
+            $table->string('so_mo_number');
+            $table->integer('units');
             $table->integer('assigned_by');
             $table->date('date_assigned');
             $table->date('date_ended');
