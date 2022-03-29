@@ -16,7 +16,6 @@ class CreateStaffTable extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
             $table->integer('assigned_by');
             $table->date('date_started');
             $table->date('date_ended');

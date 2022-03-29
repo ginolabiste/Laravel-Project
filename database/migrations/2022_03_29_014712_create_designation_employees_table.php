@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EmployeeHasDesignations extends Migration
+class CreateDesignationEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class EmployeeHasDesignations extends Migration
      */
     public function up()
     {
-        Schema::create('employee_has_designations', function(Blueprint $table){
+        Schema::create('designation_employees', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')
+            ->on('employees')->onDelete('cascade');
             $table->integer('designation_id');
-            $table->foreign('designation_id')->references('id')->on('designations')->onDelete('cascade');
+            $table->foreign('designation_id')->references('id')
+            ->on('designations')->onDelete('cascade');
             $table->string('designation_role');
             $table->string('so_mo_number');
             $table->integer('units');
@@ -36,6 +38,6 @@ class EmployeeHasDesignations extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee_has_designations');
+        Schema::dropIfExists('designation_employees');
     }
 }

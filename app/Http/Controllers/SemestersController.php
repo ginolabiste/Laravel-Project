@@ -47,6 +47,7 @@ class SemestersController extends Controller
         // $semester->semester = $request->input('semester');
         // $semester->email = $user->email;
         $semester = Semester::create([
+            'opened_by_employee_id' => $user->id,
             'school_year' => $request->input('school_year'),
             'semester' => $request->input('semester'),
             'email' => $user->email

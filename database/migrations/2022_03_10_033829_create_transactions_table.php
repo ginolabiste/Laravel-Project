@@ -17,7 +17,6 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->string('transaction_code');
             $table->integer('transact_by');
-            $table->foreign('transact_by')->references('id')->on('students')->onDelete('cascade');
             $table->string('transaction_type');
             $table->date('date_completed')->nullable();
             $table->timestamp('date_submitted');

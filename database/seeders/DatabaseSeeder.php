@@ -15,16 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([UsersTableSeeder::class]);
-        $this->call(StudentsTableSeeder::class);
+        //$this->call([UsersTableSeeder::class]);
+        //$this->call(StudentsTableSeeder::class);
 
-        // $faker = Faker::create();
-    	// foreach (range(1,100) as $index) {
-        //     DB::table('students')->insert([
-        //         'first_name' => $faker->firstname,                
-        //         'middle_name' => $faker->lastname,
-        //         'last_name' => $faker->lastname
-        //     ]);
-        // }
+        $faker = Faker::create();
+    	foreach (range(1,100) as $index) {
+            DB::table('students')->insert([
+                'first_name' => $faker->firstname,                
+                'middle_name' => $faker->lastname,
+                'last_name' => $faker->lastname
+            ]);
+        }
     }
 }

@@ -14,6 +14,7 @@ class Semester extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'opened_by_employee_id',
         'school_year',
         'semester',
         'email'
