@@ -44,6 +44,33 @@ Tip 2: you can also add an image using data-image tag
                     <hr>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#employees" @if($activeButton =='employees') aria-expanded="true" @endif>
+                    <i class="nc-icon nc-attach-87"></i>
+                    <p>
+                        {{ __('Employees') }}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse @if($activeButton =='employees') show @endif" id="employees">
+                    <hr>
+                    <ul class="nav">
+                        <li class="nav-item @if($activePage == 'manage-employess') active @endif">
+                            <a class="nav-link" href="{{route('employees.index')}}">
+                                <i class="nc-icon nc-circle-09"></i>
+                                <p>{{ __("Management") }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item @if($activePage == 'add-employees') active @endif">
+                            <a class="nav-link" href="{{route('employees.create')}}">
+                                <i class="nc-icon nc-single-02"></i>
+                                <p>{{ __("Add Employee") }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </li>
             <li class="nav-item @if($activePage == 'students') active @endif">
                 <a class="nav-link" href="{{route('students.index')}}">
                     <i class="nc-icon nc-notes"></i>

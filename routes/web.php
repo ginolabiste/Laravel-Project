@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\IncomingStudentsController;
 use App\Http\Controllers\SemestersController;
 use App\Http\Controllers\StudentsController;
@@ -39,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('/semesters', SemestersController::class);
 	Route::resource('/students', StudentsController::class);
-
+	Route::resource('/employees', EmployeesController::class);
 	
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
