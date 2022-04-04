@@ -19,11 +19,19 @@ class DatabaseSeeder extends Seeder
         //$this->call(StudentsTableSeeder::class);
 
         $faker = Faker::create();
-    	foreach (range(1,100) as $index) {
-            DB::table('students')->insert([
+    	// foreach (range(1,100) as $index) {
+        //     DB::table('students')->insert([
+        //         'first_name' => $faker->firstname,                
+        //         'middle_name' => $faker->lastname,
+        //         'last_name' => $faker->lastname
+        //     ]);
+        // }
+
+        foreach (range(1,50) as $index) {
+            DB::table('people')->insert([
                 'first_name' => $faker->firstname,                
                 'middle_name' => $faker->lastname,
-                'last_name' => $faker->lastname
+                'last_name' => $faker->lastname,
             ]);
         }
     }

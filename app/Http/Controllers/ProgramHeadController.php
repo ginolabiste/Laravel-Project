@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DesignationEmployee;
 use App\Models\Employee;
+use Carbon\Carbon;
+use Illuminate\Database\DBAL\TimestampType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class EmployeesController extends Controller
+class ProgramHeadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +18,13 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $employees = Employee::join('people', 'people.id', '=', 'employees.person_id')
-            ->get(['*']);
+
+        $employees = Employee::all();
         
-        return view('employees.index', [
+        return view('programhead.index', [
             'employees' => $employees
         ]);
+
     }
 
     /**
@@ -29,7 +34,7 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        return view('employees.create');
+        
     }
 
     /**
@@ -40,7 +45,18 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $current_date = Carbon::now();
+        $assignment = DesignationEmployee::create([
+            'employee_id' => $request->input('employee_id'),
+            'designation_id' => 1,
+            'designation_role' => 'adviser',
+            'academic_year' => $request->input('academic_year'),
+            'semester' => $request->input('semester'),
+            'assigned_by' => $user->id,
+            'date_assign' => $current_date,
+        ]);
+        return redirect('program-head');
     }
 
     /**

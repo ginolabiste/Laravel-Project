@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\IncomingStudentsController;
+use App\Http\Controllers\ProgramHeadController;
 use App\Http\Controllers\SemestersController;
 use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('/semesters', SemestersController::class);
 	Route::resource('/students', StudentsController::class);
 	Route::resource('/employees', EmployeesController::class);
-	
+	Route::resource('/program-head', ProgramHeadController::class);
+
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
 
