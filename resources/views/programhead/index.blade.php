@@ -12,8 +12,12 @@
                                 @csrf
                                 <div class="row mt-3">
                                     <div class="form-group col-sm-4">
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search Full Name" name="fullname">
-                                        <input type="hidden" name="employee_id">
+                                        <select class="form-select form-control" aria-label="semester" id="employee_id" name="employee_id">
+                                            <option selected>Choose---</option>
+                                            @foreach ($employeesSelect as $employee)
+                                            <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                            @endforeach
+                                        </select> 
                                     </div>
                                     <div class="form-group col-sm-3">
                                         <select class="form-control" name="academic_year">

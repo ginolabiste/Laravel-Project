@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\DesignationEmployee;
 use App\Models\Employee;
 use Carbon\Carbon;
-use Illuminate\Database\DBAL\TimestampType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,10 +18,12 @@ class ProgramHeadController extends Controller
     public function index()
     {
 
-        $employees = Employee::all();
+        $employees = Employee::join('people', 'people.id', '=', 'employees.person_id')
+        ->get(['*']);
         
         return view('programhead.index', [
-            'employees' => $employees
+            'employees' => $employees,
+            'employeesSelect' => $employees
         ]);
 
     }
@@ -38,7 +39,7 @@ class ProgramHeadController extends Controller
             ->get(['*']);
         
         return view('programhead.create', [
-            'employees' => $employees
+            'employees' => $employees,
         ]);
     }
 
