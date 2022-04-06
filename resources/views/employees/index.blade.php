@@ -22,7 +22,7 @@
                             <tbody>
                                 @foreach ($employees as $employee)
                                     <tr>
-                                        <td>{{ $employee->first_name }} {{ $employee->last_name }}</td>
+                                        <td>{{ $employee->id }} - {{ $employee->first_name }} {{ $employee->last_name }}</td>
                                         <td>{{ $employee->email }}</td>
                                         <td>{{ $employee->employed_by }}</td>
                                         <td>{{ $employee->date_started }}</td>

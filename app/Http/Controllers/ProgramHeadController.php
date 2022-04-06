@@ -34,7 +34,12 @@ class ProgramHeadController extends Controller
      */
     public function create()
     {
+        $employees = Employee::join('people', 'people.id', '=', 'employees.person_id')
+            ->get(['*']);
         
+        return view('programhead.create', [
+            'employees' => $employees
+        ]);
     }
 
     /**
@@ -54,7 +59,7 @@ class ProgramHeadController extends Controller
             'academic_year' => $request->input('academic_year'),
             'semester' => $request->input('semester'),
             'assigned_by' => $user->id,
-            'date_assign' => $current_date,
+            'date_assigned' => $current_date,
         ]);
         return redirect('program-head');
     }
