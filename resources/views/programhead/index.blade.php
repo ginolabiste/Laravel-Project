@@ -5,44 +5,44 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card striped-tabled-with-hover">
-                    <div class="card-body table-full-width table-responsive">
-                        <div class="col-sm-12">
-                            <form action="/program-head" method="post">
-                                @csrf
-                                <div class="row mt-3">
-                                    <div class="form-group col-sm-4">
-                                        <select class="form-select form-control" aria-label="semester" id="employee_id" name="employee_id">
-                                            <option selected>Choose---</option>
-                                            @foreach ($employeesSelect as $employee)
-                                            <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
-                                            @endforeach
-                                        </select> 
-                                    </div>
-                                    <div class="form-group col-sm-3">
-                                        <select class="form-control" name="academic_year">
-                                            <option>Academic Year</option>
-                                            <option>2021-2022</option>
-                                            <option>2022-2023</option>
-                                            <option>2023-2024</option>
-                                            <option>2024-2025</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-sm-3">
-                                        <select class="form-control" name="semester">
-                                            <option>Semester</option>
-                                            <option>First Semester</option>
-                                            <option>Second Semester</option>
-                                            <option>Summer</option>
-                                            <option>Late</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-sm-2">
-                                        <button type="submit" class="btn btn-primary btn-block">Assign</button>
-                                    </div>
+                <div class="card">
+                    <div class="card-header">
+                        Assign Adviser
+                    </div>
+                    <div class="card-body">
+                        <form action="/program-head" method="post">
+                            @csrf
+                            <div class="form-row mb-3">
+                                <div class="col-sm-4">
+                                    <select class="form-select form-control" aria-label="semester" id="employee_id" name="employee_id">
+                                        <option selected>Choose Employee</option>
+                                        @foreach ($employees as $employee)
+                                        <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
+                                        @endforeach
+                                    </select> 
                                 </div>
-                            </form>
-                        </div>
+                                <div class="col-sm-3">
+                                    <select class="form-select form-control" aria-label="semester" id="academic_year" name="academic_year">
+                                        <option selected>School Year</option>
+                                        @for($i = -1; $i < 3; $i++)
+                                        <option value="{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}">{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}</option>
+                                        @endfor
+                                    </select> 
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-select form-control" aria-label="semester" id="semester" name="semester">
+                                        <option selected>Semester</option>
+                                        <option value="First Semester">First Semester</option>
+                                        <option value="Second Semester">Second Semester</option>
+                                        <option value="Summer Semester">Summer Semester</option>
+                                        <option value="Late Semester">Late Semester</option>
+                                    </select>  
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary ">Assign Adviser</button>
+                                </div>
+                            </div>
+                        </form> 
                     </div>
                 </div>
                 <div class="card striped-tabled-with-hover">
@@ -55,18 +55,18 @@
                             <thead>
                                 <th>Employee ID</th>
                                 <th>Full Name</th>
-                                <th>Designated By</th>
-                                <th>Academic Year</th>
-                                <th>Semester</th>
+                                <th>Assigned By</th>
+                                <th>Date Started</th>
+                                <th>Date Ended</th>
                             </thead>
                             <tbody>
-                                @foreach ($employees as $employee)
+                                @foreach ($advisers as $advisers)
                                     <tr>
-                                        <td>{{ $employee->first_name }} {{ $employee->last_name }}</td>
-                                        <td>{{ $employee->email }}</td>
-                                        <td>{{ $employee->employed_by }}</td>
-                                        <td>{{ $employee->date_started }}</td>
-                                        <td>{{ $employee->date_ended }}</td>
+                                        <td>{{ $advisers->first_name }} {{ $advisers->last_name }}</td>
+                                        <td>{{ $advisers->email }}</td>
+                                        <td>{{ $advisers->assigned_by }}</td>
+                                        <td>{{ $advisers->date_started }}</td>
+                                        <td>{{ $advisers->date_ended }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

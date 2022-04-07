@@ -48,6 +48,9 @@
                                     <div class="card card-plain">
                                         <div class="content">
                                             <div class="form-group">
+                                                <input type="text" name="username" id="username" class="form-control" placeholder="{{ __('Username') }}" value="{{ old('username') }}" required autofocus>
+                                            </div>
+                                            <div class="form-group">
                                                 <input type="text" name="name" id="name" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
                                             </div>
 
@@ -65,7 +68,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="password" name="password" class="form-control" required >
+                                                <input type="password" name="password" class="form-control" required placeholder="Password">
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" name="password_confirmation" placeholder="Password Confirmation" class="form-control" required autofocus>
@@ -73,7 +76,7 @@
                                             <div class="form-group d-flex justify-content-center">
                                                 <div class="form-check rounded col-md-10 text-left">
                                                     <label class="form-check-label text-white d-flex align-items-center">
-                                                        <input class="form-check-input" name="agree" type="checkbox" required >
+                                                        <input class="form-check-input" name="agree" type="checkbox" required>
                                                         <span class="form-check-sign"></span>
                                                         <b>{{ __('Agree with terms and conditions') }}</b>
                                                     </label>

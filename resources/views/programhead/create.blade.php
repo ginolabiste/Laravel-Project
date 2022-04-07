@@ -13,37 +13,32 @@
                             <form action="/program-head" method="post">
                                 @csrf
                                 <div class="form-row mb-3">
-                                    <div class="col">
-                                        <label for="employee_id">Employee</label>
+                                    <div class="col-sm-4">
                                         <select class="form-select form-control" aria-label="semester" id="employee_id" name="employee_id">
-                                            <option selected>Choose---</option>
+                                            <option selected>Choose Employee</option>
                                             @foreach ($employees as $employee)
                                             <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
                                             @endforeach
                                         </select> 
                                     </div>
-                                    <div class="col">
-                                        <label for="academic_year">School Year</label>
+                                    <div class="col-sm-3">
                                         <select class="form-select form-control" aria-label="semester" id="academic_year" name="academic_year">
-                                            <option selected>Choose---</option>
+                                            <option selected>School Year</option>
                                             @for($i = -1; $i < 3; $i++)
                                             <option value="{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}">{{ date('Y') + $i }}-{{ date('Y') + $i + 1 }}</option>
                                             @endfor
                                         </select> 
                                     </div>
-                                    <div class="col">
-                                        <label for="semester">School Semester</label>
+                                    <div class="col-sm-3">
                                         <select class="form-select form-control" aria-label="semester" id="semester" name="semester">
-                                            <option selected>Choose---</option>
+                                            <option selected>Semester</option>
                                             <option value="First Semester">First Semester</option>
                                             <option value="Second Semester">Second Semester</option>
                                             <option value="Summer Semester">Summer Semester</option>
                                             <option value="Late Semester">Late Semester</option>
                                         </select>  
                                     </div>
-                                </div>
-                                <div class="form-row mb-3">
-                                    <div class="col text-center">
+                                    <div class="col-sm-2">
                                         <button type="submit" class="btn btn-primary ">Assign Adviser</button>
                                     </div>
                                 </div>

@@ -20,10 +20,14 @@ class ProgramHeadController extends Controller
 
         $employees = Employee::join('people', 'people.id', '=', 'employees.person_id')
         ->get(['*']);
+
+        $advisers = DesignationEmployee::join('employees', 'employees.id', '=', 'designation_employees.employee_id')
+        ->join('people', 'people.id', '=', 'employees.person_id')
+        ->where('designation_employees.designation_id', '=', 1)->get(['*']);
         
         return view('programhead.index', [
-            'employees' => $employees,
-            'employeesSelect' => $employees
+            'advisers' => $advisers,
+            'employees' => $employees
         ]);
 
     }
@@ -36,7 +40,7 @@ class ProgramHeadController extends Controller
     public function create()
     {
         $employees = Employee::join('people', 'people.id', '=', 'employees.person_id')
-            ->get(['*']);
+            ->get(['*, employees.first_name']);
         
         return view('programhead.create', [
             'employees' => $employees,

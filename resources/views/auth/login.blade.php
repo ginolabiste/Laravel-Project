@@ -6,7 +6,7 @@
             <div class="container mt-5">    
                 <div class="col-md-4 col-sm-6 ml-auto mr-auto">
                     <form class="form" method="POST" action="{{ route('login') }}">
-                        @csrf
+                        @csrf 
                         <div class="card card-login card-hidden">
                             <div class="card-header ">
                                 <h3 class="header text-center">{{ __('Login') }}</h3>
@@ -14,11 +14,11 @@
                             <div class="card-body ">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="email" class="col-md-6 col-form-label">{{ __('E-Mail Address') }}</label>
+                                        <label for="user" class="col-md-6 col-form-label">Username</label>
             
                                         <div class="col-md-14">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', 'admin@lightbp.com') }}" required autocomplete="email" autofocus>
-            
+                                           <input id="user" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username', 'dorsu@lightbp.com') }}" required autocomplete="username" autofocus>
+
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
                 
                                             <div class="col-md-14">
                                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password', 'secret') }}" required autocomplete="current-password">
-                
+
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
