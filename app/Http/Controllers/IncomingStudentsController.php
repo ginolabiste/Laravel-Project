@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\IncomingStudent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IncomingStudentsController extends Controller
 {
@@ -13,7 +15,12 @@ class IncomingStudentsController extends Controller
      */
     public function index()
     {
-        //
+        $incoming_students = IncomingStudent::all()
+        ->orderBy('id', 'DESC')
+        ->paginate(10);
+        return view('students.index', [
+            'students' => $incoming_students
+        ]);
     }
 
     /**

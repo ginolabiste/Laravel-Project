@@ -20,10 +20,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 //Route::get('/pre-register', 'App\Http\Controllers\IncomingStudentsController::class@register');
 Route::resource('/enroll', IncomingStudentsController::class);
+Route::get('/sample', function(){ return view('layouts/temp');});
 
 Auth::routes();
 
