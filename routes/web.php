@@ -34,17 +34,16 @@ Route::post('/home', 'App\Http\Controllers\HomeController@add')->name('dashboard
 
 Route::group(['middleware' => 'auth'], function () {
 
+	Route::resource('incoming-students', IncomingStudentsController::class);
+
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::patch('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::patch('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-
-
 	Route::resource('/semesters', SemestersController::class);
 	Route::resource('/students', StudentsController::class);
 	Route::resource('/employees', EmployeesController::class);
 	Route::resource('/program-head', ProgramHeadController::class);
-
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
 

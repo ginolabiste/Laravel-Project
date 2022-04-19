@@ -16,7 +16,12 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $incoming_students = IncomingStudent::all();
+        //$incoming_students = IncomingStudent::all();
+
+        $incoming_students = DB::table('incoming_students')
+        ->select('*')
+        ->orderBy('id', 'DESC')
+        ->paginate(5);
 
         $students = DB::table('students')
         ->select('students.id as id', 'school_id', 'first_name', 'middle_name', 'last_name', 'courses.acronyms as acronyms', 'student_status', 'application_status')
@@ -58,7 +63,7 @@ class StudentsController extends Controller
      */
     public function show($id)
     {
-        $student = Student::find($id)->first();
+        $student = Student::find($id);
         
         return view('students.show')->with('student', $student);
     }

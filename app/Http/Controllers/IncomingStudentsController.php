@@ -15,12 +15,7 @@ class IncomingStudentsController extends Controller
      */
     public function index()
     {
-        $incoming_students = IncomingStudent::all()
-        ->orderBy('id', 'DESC')
-        ->paginate(10);
-        return view('students.index', [
-            'students' => $incoming_students
-        ]);
+        
     }
 
     /**
@@ -52,7 +47,9 @@ class IncomingStudentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $incoming_student = IncomingStudent::find($id);
+        
+        return view('incomingstudents.show')->with('incoming_student', $incoming_student);
     }
 
     /**

@@ -28,11 +28,22 @@ class DatabaseSeeder extends Seeder
         // }
 
         foreach (range(1,50) as $index) {
-            DB::table('people')->insert([
+            DB::table('incoming_students')->insert([
                 'first_name' => $faker->firstname,                
                 'middle_name' => $faker->lastname,
                 'last_name' => $faker->lastname,
+                'fathers_name' => $faker->name,
+                'mothers_name' => $faker->name,
+                'guardian' => $faker->name,
             ]);
         }
+
+        // foreach (range(1,50) as $index) {
+        //     DB::table('people')->insert([
+        //         'first_name' => $faker->firstname,                
+        //         'middle_name' => $faker->lastname,
+        //         'last_name' => $faker->lastname,
+        //     ]);
+        // }
     }
 }

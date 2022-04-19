@@ -28,13 +28,14 @@
                                             <td>{{ $incoming_student->course_prio }}</td>
                                             <td>{{ $incoming_student->course_second_prio }}</td>
                                             <td>{{ $incoming_student->course_third_prio }}</td>
-                                            <td>{{ $incoming_student->application_status }}</td>
+                                            <td>{{ $incoming_student->is_accepted }}</td>
                                             @if ($incoming_student->is_accepted == NULL)
                                                 <td>{{ __('Ongoing') }}</td>
                                             @else
                                                 <td>{{ __('Accepted') }}</td>
                                             @endif
                                             <td>
+                                            <a class="btn btn-primary btn-sm mx-1" href="incoming-students/{{ $incoming_student->id }}" role="button">View</a> 
                                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                                                 Modal
                                             </button>
@@ -43,6 +44,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <div class="d-flex float-right pr-4">
+                                {{ $incoming_students->appends(['sort' => 'incoming_students'])->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -109,17 +113,29 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="incomingStudentName">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header">
+
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                        <div class="card-footer">
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Submit</button>
             </div>
             </div>
         </div>
